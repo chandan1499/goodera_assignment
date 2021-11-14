@@ -8,7 +8,7 @@
   
 # Steps to run the application
    <ul>
-     <li>git clone </li>
+     <li>git clone https://github.com/chandan1499/goodera_assignment.git </li>
      <li>npm install</li>
      <li>npm run start</li>
      <li>npm run server (in another terminal)</li>
