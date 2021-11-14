@@ -1,0 +1,28 @@
+.container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.card {
+   padding: 10px; 
+   
+   display: flex;
+}
+
+.card > img {
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.title {
+    margin: 0;
+}
+
+.description{ 
+    font-size: 10px;
+}
+
+.moreDetailsBtn {
+    text-align: right;
+}

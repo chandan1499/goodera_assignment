@@ -10,8 +10,6 @@ router.get('/', async (req, res) => {
         let title = req.query.title || "";
         let location = req.query.location || "";
 
-        console.log({title, location});
-
         if (title != "" && location != "") {
             const jobs = await Jobs.find({ title: title, location: location }).lean().exec();
             return res.status(200).json({ jobs });

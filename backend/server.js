@@ -1,7 +1,9 @@
 const express = require('express');
 const connect = require('./src/configs/db');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const jobController = require('./src/controllers/jobs.controller');
