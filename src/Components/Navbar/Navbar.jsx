@@ -1,4 +1,5 @@
-import styles from './Navbar.module.css'
+import styles from './Navbar.module.css';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 
 export const Navbar = () => {
     return (
@@ -6,6 +7,7 @@ export const Navbar = () => {
             <nav className={styles.navbar}>
                 <div className={styles.left_nav}>
                     <ul>
+                        <WorkOutlineIcon style={{color: "white"}} />
                         <li><a href="#" className={styles.title}>JobHunt</a></li>
                         <li><a href="#">Find Jobs</a></li>
                         <li><a href="#">Upskill Yourself</a></li>

@@ -1,6 +1,5 @@
 import './App.css';
 import { JobList } from './Components/JobList/JobList';
-import { JobPost } from './Components/JobPost/Job_post';
 import { Navbar } from './Components/Navbar/Navbar';
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
     <div className="App">
       <Navbar />
       <JobList />
-      <JobPost />
     </div>
   );
 }
