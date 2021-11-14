@@ -9,28 +9,40 @@ import axios from 'axios';
 export const JobList = () => {
 
     const [JobList, setJobList] = useState([]);
+    const [state, setState] = useState({
+        location: "",
+        title: ""
+    })
+
 
     useEffect(() => {
         axios.get("http://localhost:8080/jobs").then((res) => {
             setJobList(res.data.jobs);
-            console.log(res.data.jobs);
         }).catch((err) => {
             console.log(err);
         })
     }, [])
+
+    const handleQuerySearch = () => {
+        axios.get(`http://localhost:8080/jobs?title=${state.title}&location=${state.location}`).then((res) => {
+            setJobList(res.data.jobs);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
 
     return (
         <div className={styles.container}>
             <div className={styles.search_field_container}>
                 <div className={styles.search_field}>
                     <SearchIcon />
-                    <input type="text" placeholder="Job Title or Keyword" />
+                    <input type="text" placeholder="Job Title or Keyword" value={state.title} onChange={(e) => { setState({ ...state, title: e.target.value }) }} />
                 </div>
                 <div className={styles.search_field}>
                     <LocationOnIcon />
-                    <input type="text" placeholder="Search Location" />
+                    <input type="text" placeholder="Search Location" value={state.location} onChange={(e) => { setState({ ...state, location: e.target.value }) }} />
                 </div>
-                <Button variant="contained">Search</Button>
+                <Button variant="contained" onClick={() => handleQuerySearch()}>Search</Button>
             </div>
 
             <div className={styles.JobList_container}>
